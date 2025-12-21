@@ -6,6 +6,7 @@ import { showCelebration, showEncouragement } from '../../../components/ui/Messa
 
 interface SpeedRaceProps {
   onBack: () => void;
+  initialDifficulty?: 1 | 2 | 3 | 4;
 }
 
 interface Question {
@@ -39,9 +40,9 @@ const timeModeConfig: Record<TimeMode, { label: string; description: string }> =
   120: { label: '2 Dakika', description: 'Maraton' }
 };
 
-export default function SpeedRace({ onBack }: SpeedRaceProps) {
+export default function SpeedRace({ onBack, initialDifficulty = 1 }: SpeedRaceProps) {
   const [gameState, setGameState] = useState<'menu' | 'countdown' | 'playing' | 'finished'>('menu');
-  const [difficulty, setDifficulty] = useState<Difficulty>(1);
+  const [difficulty, setDifficulty] = useState<Difficulty>(initialDifficulty);
   const [operation, setOperation] = useState<Operation>('karisik');
   const [timeMode, setTimeMode] = useState<TimeMode>(60);
   const [countdown, setCountdown] = useState(3);

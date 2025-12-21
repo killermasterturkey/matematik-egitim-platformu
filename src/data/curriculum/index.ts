@@ -1,14 +1,24 @@
 // TÜRK MİLLİ EĞİTİM MÜFREDATİ - İLKOKUL MATEMATİK
-// Türkiye Yüzyılı Maarif Modeli - 1-4. Sınıflar
+// Türkiye Yüzyılı Maarif Modeli - Destek Sınıfı + 1-4. Sınıflar
 
+import { grade0Curriculum } from './grade0';
 import { grade1Curriculum } from './grade1';
 import { grade2Curriculum } from './grade2';
 import { grade3Curriculum } from './grade3';
 import { grade4Curriculum } from './grade4';
 import { GradeCurriculum } from './types';
 
-// Tüm sınıf müfredatları
+// Tüm sınıf müfredatları (Destek Sınıfı + 1-4. Sınıflar)
 export const allGrades: GradeCurriculum[] = [
+  grade0Curriculum, // Destek Sınıfı - Ekstra yardım gerektiren öğrenciler için
+  grade1Curriculum,
+  grade2Curriculum,
+  grade3Curriculum,
+  grade4Curriculum
+];
+
+// Sadece normal sınıflar (1-4)
+export const regularGrades: GradeCurriculum[] = [
   grade1Curriculum,
   grade2Curriculum,
   grade3Curriculum,
@@ -40,7 +50,8 @@ export const getTopicById = (grade: number, topicId: string) => {
 
 // İstatistikler
 export const curriculumStats = {
-  totalGrades: 4,
+  totalGrades: 5, // Destek Sınıfı dahil
+  regularGrades: 4, // Normal sınıflar (1-4)
   totalThemes: allGrades.reduce((sum, g) => sum + g.themes.length, 0),
   totalTopics: allGrades.reduce((sum, g) =>
     sum + g.themes.reduce((tSum, t) => tSum + t.topics.length, 0), 0),
@@ -48,6 +59,7 @@ export const curriculumStats = {
 };
 
 // Tek tek export
+export { grade0Curriculum } from './grade0';
 export { grade1Curriculum } from './grade1';
 export { grade2Curriculum } from './grade2';
 export { grade3Curriculum } from './grade3';

@@ -6,6 +6,7 @@ import { showCelebration, showEncouragement } from '../../../components/ui/Messa
 
 interface MemoryGameProps {
   onBack: () => void;
+  initialDifficulty?: 1 | 2 | 3 | 4;
 }
 
 interface Card {
@@ -43,9 +44,9 @@ const cardCountConfig: Record<CardCount, { label: string; pairs: number; grid: s
   20: { label: '20 Kart', pairs: 10, grid: 'grid-cols-5' }
 };
 
-export default function MemoryGame({ onBack }: MemoryGameProps) {
+export default function MemoryGame({ onBack, initialDifficulty = 1 }: MemoryGameProps) {
   const [gameState, setGameState] = useState<'menu' | 'playing' | 'finished'>('menu');
-  const [difficulty, setDifficulty] = useState<Difficulty>(1);
+  const [difficulty, setDifficulty] = useState<Difficulty>(initialDifficulty);
   const [operation, setOperation] = useState<Operation>('karisik');
   const [cardCount, setCardCount] = useState<CardCount>(12);
   const [cards, setCards] = useState<Card[]>([]);

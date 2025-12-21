@@ -7,6 +7,7 @@ import Carpma from "../pages/carpma/page";
 import Bolme from "../pages/bolme/page";
 import Karisik from "../pages/karisik/page";
 import Testler from "../pages/testler/page";
+import DenemeTestiPage from "../pages/testler/DenemeTestiPage";
 import MiniOyunlar from "../pages/mini-oyunlar/page";
 import CarpimTablosu from "../pages/carpim-tablosu/page";
 import HikayeliProblemler from "../pages/hikayeli-problemler/page";
@@ -68,6 +69,10 @@ const routes: RouteObject[] = [
   {
     path: "/testler",
     element: <Testler />,
+  },
+  {
+    path: "/deneme-testi",
+    element: <DenemeTestiPage />,
   },
   {
     path: "/mini-oyunlar",

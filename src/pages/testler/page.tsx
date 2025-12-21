@@ -238,6 +238,10 @@ export default function Testler() {
                     <span className="text-xl">⏱️</span>
                     <span className="text-sm font-bold text-gray-700">Süreye Karşı</span>
                   </div>
+                  <Link to="/deneme-testi" className="flex items-center gap-2 bg-gradient-to-r from-green-400 to-emerald-500 px-4 py-2 rounded-full text-white hover:shadow-lg transition-all">
+                    <span className="text-xl">📋</span>
+                    <span className="text-sm font-bold">Deneme Testi</span>
+                  </Link>
                 </div>
               </div>
             </div>

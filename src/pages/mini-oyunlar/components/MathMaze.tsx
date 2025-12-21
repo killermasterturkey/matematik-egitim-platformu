@@ -6,6 +6,7 @@ import { showCelebration, showEncouragement } from '../../../components/ui/Messa
 
 interface MathMazeProps {
   onBack: () => void;
+  initialDifficulty?: 1 | 2 | 3 | 4;
 }
 
 interface Cell {
@@ -22,7 +23,7 @@ interface Position {
   y: number;
 }
 
-export default function MathMaze({ onBack }: MathMazeProps) {
+export default function MathMaze({ onBack, initialDifficulty = 1 }: MathMazeProps) {
   const [maze, setMaze] = useState<Cell[][]>([]);
   const [playerPos, setPlayerPos] = useState<Position>({ x: 0, y: 0 });
   const [level, setLevel] = useState(1);

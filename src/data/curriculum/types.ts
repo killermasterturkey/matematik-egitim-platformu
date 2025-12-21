@@ -53,6 +53,14 @@ export interface Topic {
   content: TopicContent;
 }
 
+// Soru tipleri için yardımcı tipler
+export type QuestionType = 'multiple-choice' | 'fill-blank' | 'matching' | 'visual' | 'ordering' | 'true-false';
+
+// Soru için zorunlu id alanı
+export interface QuestionWithId extends Question {
+  id: string;
+}
+
 export interface Theme {
   id: string;
   title: string;
@@ -71,7 +79,7 @@ export interface Theme {
 }
 
 export interface GradeCurriculum {
-  grade: 1 | 2 | 3 | 4;
+  grade: 0 | 1 | 2 | 3 | 4; // 0 = Özel Eğitim Sınıfı (Destek Gerektiren Öğrenciler)
   title: string;
   emoji: string;
   color: string;
@@ -83,10 +91,31 @@ export interface GradeCurriculum {
   totalTopics: number;
   description: string;
   themes: Theme[];
+  // Sınıf bazlı anlatım özellikleri
+  languageStyle?: 'simple' | 'moderate' | 'advanced'; // Anlatım karmaşıklığı
+  visualDensity?: 'high' | 'medium' | 'low'; // Görsel yoğunluğu
+  stepByStep?: boolean; // Adım adım anlatım
+  repeatExamples?: boolean; // Örnek tekrarı
 }
 
 // Sınıf renk şemaları
 export const gradeColors = {
+  0: {
+    gradient: 'from-pink-400 via-rose-500 to-red-500',
+    bg: 'bg-pink-50',
+    bgMedium: 'bg-pink-100',
+    text: 'text-pink-600',
+    textDark: 'text-pink-700',
+    border: 'border-pink-200',
+    borderMedium: 'border-pink-300',
+    ring: 'ring-pink-400',
+    shadow: 'shadow-pink-200',
+    button: 'from-pink-500 to-rose-500',
+    hover: 'hover:from-pink-600 hover:to-rose-600',
+    emoji: '💝',
+    mascot: '🐻',
+    name: 'Destek Sınıfı'
+  },
   1: {
     gradient: 'from-green-400 via-emerald-500 to-teal-500',
     bg: 'bg-green-50',

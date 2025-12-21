@@ -185,7 +185,7 @@ export default function SiniflarPage() {
         {/* Grade Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {allGrades.map((grade, index) => {
-            const colors = gradeColors[grade.grade as 1 | 2 | 3 | 4];
+            const colors = gradeColors[grade.grade as 0 | 1 | 2 | 3 | 4];
             const progressData = gradeProgress[grade.grade] || { completed: 0, total: 0 };
             const progressPercent = progressData.total > 0 ? Math.round((progressData.completed / progressData.total) * 100) : 0;
 

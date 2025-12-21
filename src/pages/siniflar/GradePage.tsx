@@ -7,12 +7,14 @@ import { gradeColors, getRandomMotivation, GradeCurriculum, CURRICULUM_PROGRESS_
 import { useState, useEffect } from 'react';
 
 // Müfredat verilerini import et
+import { grade0Curriculum } from '../../data/curriculum/grade0';
 import { grade1Curriculum } from '../../data/curriculum/grade1';
 import { grade2Curriculum } from '../../data/curriculum/grade2';
 import { grade3Curriculum } from '../../data/curriculum/grade3';
 import { grade4Curriculum } from '../../data/curriculum/grade4';
 
 const curriculumData: { [key: number]: GradeCurriculum } = {
+  0: grade0Curriculum, // Destek Sınıfı
   1: grade1Curriculum,
   2: grade2Curriculum,
   3: grade3Curriculum,
@@ -21,7 +23,7 @@ const curriculumData: { [key: number]: GradeCurriculum } = {
 
 export default function GradePage() {
   const { grade } = useParams<{ grade: string }>();
-  const gradeNum = parseInt(grade || '1') as 1 | 2 | 3 | 4;
+  const gradeNum = parseInt(grade || '1') as 0 | 1 | 2 | 3 | 4;
   const colors = gradeColors[gradeNum];
   const curriculum = curriculumData[gradeNum];
   const [motivation] = useState(getRandomMotivation());

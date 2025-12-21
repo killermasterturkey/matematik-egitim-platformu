@@ -6,6 +6,7 @@ import { showCelebration, showEncouragement, showStreak } from '../../../compone
 
 interface BalloonGameProps {
   onBack: () => void;
+  initialDifficulty?: 1 | 2 | 3 | 4;
 }
 
 interface Balloon {
@@ -54,9 +55,9 @@ const operationConfig: Record<Operation, { label: string; emoji: string; color: 
   karisik: { label: 'Karışık', emoji: '🎲', color: 'from-orange-400 to-amber-500' }
 };
 
-export default function BalloonGame({ onBack }: BalloonGameProps) {
+export default function BalloonGame({ onBack, initialDifficulty = 1 }: BalloonGameProps) {
   const [gameState, setGameState] = useState<'menu' | 'playing' | 'finished'>('menu');
-  const [difficulty, setDifficulty] = useState<Difficulty>(1);
+  const [difficulty, setDifficulty] = useState<Difficulty>(initialDifficulty);
   const [operation, setOperation] = useState<Operation>('karisik');
   const [score, setScore] = useState(0);
   const [lives, setLives] = useState(5);
