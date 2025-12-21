@@ -1,37 +1,56 @@
-// DESTEK SINIFI - TEMA 1: SAYILARLA TANIŞALIM
-// Bu tema, sayıları en temel düzeyde, bol görsel ve tekrarla öğretir.
+// DESTEK SINIFI - TEMA 1: HAZIRLIK - TEMEL BECERİLER
+// En temel becerileri öğreten, çok basit, çok sevgi dolu tema
 
 import { Theme } from '../../types';
-import { konu1Sayma15 } from './konu1-sayma-1-5';
+import { konu1Renkler } from './konu1-renkler';
+import { konu2BuyukKucuk } from './konu2-buyuk-kucuk';
+import { konu3Eslestirme } from './konu3-eslestirme';
+import { konu4Gruplama } from './konu4-gruplama';
+import { konu5Dikkat } from './konu5-dikkat';
 
 export const tema1: Theme = {
-  id: 'sayilarla-tanisalim',
-  title: 'Sayılarla Tanışalım',
-  description: 'Sayıları öğrenmeye başlıyoruz! 1, 2, 3, 4, 5... Birlikte sayacağız!',
-  emoji: '🔢',
+  id: 'hazirlik-temel-beceriler',
+  title: 'HAZIRLIK - Temel Beceriler',
+  description: 'Renkler, Büyük-Küçük, Eşleştirme, Gruplama, Dikkat - Matematiğe Hazırlık',
+  emoji: '🌈',
   color: 'from-pink-400 to-rose-500',
   bgColor: 'bg-pink-50',
   borderColor: 'border-pink-200',
   textColor: 'text-pink-600',
-  hours: 30, // Daha fazla zaman
-  percentage: 30,
+  hours: 20,
+  percentage: 20,
   objectives: [
-    '1\'den 5\'e kadar sayıları tanıma',
-    'Nesneleri sayma',
-    'Sayı-miktar ilişkisini anlama',
-    'Parmakla sayma'
+    'Temel renkleri tanır (Kırmızı, Mavi, Sarı, Yeşil)',
+    'Büyük-küçük kavramlarını ayırt eder',
+    'Aynı olanları eşleştirir',
+    'Nesneleri gruplara ayırır',
+    'Dikkatli gözlem yapar',
+    'Farklı ve eksik olanı bulur'
   ],
-  keywords: ['Sayı', 'Sayma', 'Bir', 'İki', 'Üç', 'Dört', 'Beş'],
+  keywords: [
+    'renkler',
+    'büyük',
+    'küçük',
+    'eşleştirme',
+    'gruplama',
+    'dikkat',
+    'odaklanma',
+    'farklı',
+    'aynı',
+    'karşılaştırma'
+  ],
   generalizations: [
-    'Her sayının bir anlamı var.',
-    'Sayılar sırayla gelir.',
-    'Nesneleri sayarak öğreniriz.'
+    '🎨 Renkler her yerdedir ve hayatımızı güzelleştirir',
+    '📏 Şeyler büyük veya küçük olabilir, karşılaştırabiliriz',
+    '🎯 Aynı olanları eşleştirebilir, gruplayabiliriz',
+    '👀 Dikkatli bakarsak farklılıkları ve eksiklikleri fark ederiz',
+    '💝 Her öğrenci kendi hızında öğrenir ve bu çok doğaldır'
   ],
   topics: [
-    konu1Sayma15,
-    // Diğer konular eklenecek:
-    // konu2Sayma610
-    // konu3SayiEsleme
-    // konu4BuyukKucuk
+    konu1Renkler,
+    konu2BuyukKucuk,
+    konu3Eslestirme,
+    konu4Gruplama,
+    konu5Dikkat
   ]
 };
